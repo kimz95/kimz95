@@ -12,15 +12,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Generate language stats
         uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          template: repository
+          template: classic
           base: header, languages
-          config_timezone: Europe/Paris # Adjust timezone if needed
+          config_timezone: Europe/Stockholm
+          config_skip_forks: true
           
       - name: Update README with language stats
         run: |
