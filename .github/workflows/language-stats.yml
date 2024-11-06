@@ -23,6 +23,7 @@ jobs:
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           template: classic
+          filename: README.md
           base: header, languages
           config_timezone: Europe/Stockholm
           config_skip_forks: true
