@@ -1,0 +1,29 @@
+name: Update Language Stats
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * 0' # Runs weekly
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Generate language stats
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          template: repository
+          base: header, languages
+          config_timezone: Europe/Paris # Adjust timezone if needed
+          
+      - name: Update README with language stats
+        run: |
+          echo "## Language Usage" >> README.md
+          echo "${{ steps.languages.outputs.language_stats }}" >> README.md
+        shell: bash
