@@ -26,10 +26,3 @@ jobs:
           filename: README.md
           base: header, languages
           config_timezone: Europe/Stockholm
-          config_skip_forks: true
-          
-      - name: Update README with language stats
-        run: |
-          echo "## Language Usage" >> README.md
-          echo "${{ steps.languages.outputs.language_stats }}" >> README.md
-        shell: bash
