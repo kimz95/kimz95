@@ -1,7 +1,7 @@
 # Hi there 👋
 <p align="center"><img src="/metrics.plugin.languages.svg" alt="Metrics" width="600"></p>
 
-<p align="center">## 🛠 Tools and Technologies</p>
+<h2 align="center">🛠 Tools and Technologies</h2>
 
 ![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
